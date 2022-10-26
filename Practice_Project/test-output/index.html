@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testScript.FlixBus" hash-for-method="bookBus(roundway, Amsterdam, Paris, May, 2024, 22, June, 2024, 18, 3, 2, 1)">bookBus(roundway, Amsterdam, Paris, May, 2024, 22, June, 2024, 18, 3, 2, 1)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testScript.FlixBus" hash-for-method="bookBus(roundway, Paris, Munich, January, 2024, 10, January, 2024, 10, 3, 2, 1)">bookBus(roundway, Paris, Munich, January, 2024, 10, January, 2024, 10, 3, 2, 1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -127,10 +127,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="bookBus(roundway, Amsterdam, Paris, May, 2024, 22, June, 2024, 18, 3, 2, 1)">
-                  </a> <!-- bookBus(roundway, Amsterdam, Paris, May, 2024, 22, June, 2024, 18, 3, 2, 1) -->
+                  <a name="bookBus(roundway, Paris, Munich, January, 2024, 10, January, 2024, 10, 3, 2, 1)">
+                  </a> <!-- bookBus(roundway, Paris, Munich, January, 2024, 10, January, 2024, 10, 3, 2, 1) -->
                   <span class="method-name">bookBus</span>
-                  <span class="parameters">(roundway, Amsterdam, Paris, May, 2024, 22, June, 2024, 18, 3, 2, 1)</span>
+                  <span class="parameters">(roundway, Paris, Munich, January, 2024, 10, January, 2024, 10, 3, 2, 1)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -145,19 +145,10 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;genericUtility.ListenersClass&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
-    &lt;parameter name=&quot;pickYear&quot; value=&quot;2024&quot;/&gt;
-    &lt;parameter name=&quot;pickMonth&quot; value=&quot;May&quot;/&gt;
-    &lt;parameter name=&quot;pickReturndate&quot; value=&quot;18&quot;/&gt;
-    &lt;parameter name=&quot;round&quot; value=&quot;roundway&quot;/&gt;
-    &lt;parameter name=&quot;toName&quot; value=&quot;Paris&quot;/&gt;
-    &lt;parameter name=&quot;fromName&quot; value=&quot;Amsterdam&quot;/&gt;
-    &lt;parameter name=&quot;pickReturnYear&quot; value=&quot;2024&quot;/&gt;
-    &lt;parameter name=&quot;pickReturnMonth&quot; value=&quot;June&quot;/&gt;
-    &lt;parameter name=&quot;pickdate&quot; value=&quot;22&quot;/&gt;
-    &lt;parameter name=&quot;adult&quot; value=&quot;3&quot;/&gt;
-    &lt;parameter name=&quot;child&quot; value=&quot;2&quot;/&gt;
-    &lt;parameter name=&quot;bike&quot; value=&quot;1&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testScript.FlixBus&quot;/&gt;
     &lt;/classes&gt;
@@ -203,12 +194,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'bookBus')
 data.setCell(0, 2, 'testScript.FlixBus')
-data.setCell(0, 3, 24730);
+data.setCell(0, 3, 22178);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 24 seconds</span>
+              <span class="suite-total-time">Total running time: 22 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -235,10 +226,18 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">testScript.FlixBus</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">bookBus(roundway, Amsterdam, Paris, May, 2024, 22, June, 2024, 18, 3, 2, 1)</span>
+              <div class="configuration-method before">
+                <span class="method-name">precondition</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">bookBus(roundway, Paris, Munich, January, 2024, 10, January, 2024, 10, 3, 2, 1)</span>
+                <span class="method-start">3885 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">postcondition</span>
+                <span class="method-start">26074 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
