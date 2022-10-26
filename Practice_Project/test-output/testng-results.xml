@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="24782" started-at="2022-10-26T11:52:02 IST" finished-at="2022-10-26T11:52:27 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="24782" started-at="2022-10-26T11:52:02 IST" finished-at="2022-10-26T11:52:27 IST">
+      <class name="testScript.FlixBus">
+        <test-method status="PASS" signature="bookBus(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testScript.FlixBus@75881071]" name="bookBus" duration-ms="24730" started-at="2022-10-26T11:52:02 IST" finished-at="2022-10-26T11:52:27 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[roundway]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Amsterdam]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Paris]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[May]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2024]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[22]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[June]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[2024]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[18]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookBus -->
+      </class> <!-- testScript.FlixBus -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

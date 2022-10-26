@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+  <parameter name="round" value="roundway"></parameter>
+  <parameter name="fromName" value="Amsterdam"></parameter>
+  <parameter name="toName" value="Paris"></parameter>
+  <parameter name="pickMonth" value="May"></parameter>
+  <parameter name="pickYear" value="2024"></parameter>
+  <parameter name="pickdate" value="22"></parameter>
+  <parameter name="pickReturnMonth" value="June"></parameter>
+  <parameter name="pickReturnYear" value="2024"></parameter>
+  <parameter name="pickReturndate" value="18"></parameter>
+  <parameter name="adult" value="3"></parameter>
+  <parameter name="child" value="2"></parameter>
+  <parameter name="bike" value="1"></parameter>
+  
+    <classes>
+      <class name="testScript.FlixBus"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

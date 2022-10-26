@@ -1,12 +1,20 @@
 package genericUtility;
 
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -20,77 +28,48 @@ public class BaseClass {
 	
 	
 	
-	@BeforeSuite
-	public void connectToDatabase()
-	{
-		System.out.println("Database is connected");
-	}
+//	@BeforeSuite
+//	public void connectToDatabase()
+//	{
+//		System.out.println("Database is connected");
+//	}
+//	
+//	@AfterSuite
+//	public void disconnectToDatabase()
+//	{
+//		System.out.println("Database is disconnected");
+//	}
+
 	
-	@AfterSuite
-	public void disconnectToDatabase()
-	{
-		System.out.println("Database is disconnected");
-	}
-//	@Parameters("browser")
-	
-	@BeforeClass
+	@BeforeMethod
 	public void precondition() throws Exception
 	{
 		
-		String URL = flib.getPropertyKeyValue("url");
-		String BROWSER = flib.getPropertyKeyValue("browser");
-		
-		
-		if(BROWSER.equalsIgnoreCase("chrome"))
-		{
-			WebDriverManager.chromedriver().setup();
-			driver= new ChromeDriver();
-		}
-		else if(BROWSER.equalsIgnoreCase("firefox"))
-		{
-			WebDriverManager.firefoxdriver().setup();
-			driver= new FirefoxDriver();
-		}
-		else
-		{
-			System.out.println("invalid browser name");
-		}
+		WebDriverManager.chromedriver().setup();
+		driver= new ChromeDriver();
 		
 		//step5: maximize the window
 		driver.manage().window().maximize();
 		driverlib.implicitlyWait(driver);
 		
-		//step6: fetch the webpage
-	//	driver.get(URL);
-
+	
 		
 	}
 	
-	@AfterClass
+	@AfterMethod
 	public void postcondition()
 	{
 		driver.quit();
 	}
 	
-	
-	
-	
-	
-
-	
-//	@BeforeMethod
-//	public void loginToApp() throws Exception
-//	{
-//		String url = flib.getPropertyKeyValue("url");
-//		driver.get(url);
-//
-//	}
-//	
-//	@AfterMethod
-//	public void logOutFromApp()
-//	{
-//		
-//	}
-
+	public String getScreenShot(String testCaseName, WebDriver driver) throws IOException
+	{
+	   	
+		TakesScreenshot ts= (TakesScreenshot) driver;
+		File scr = ts.getScreenshotAs(OutputType.FILE);
+		File file = new File(System.getProperty("user.dir")+"//reports//"+testCaseName+".png");
+			FileUtils.copyFile(scr, file);
+	    return System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
+	}
 
 }

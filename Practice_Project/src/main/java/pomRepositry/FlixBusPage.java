@@ -1,5 +1,6 @@
 package pomRepositry;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +20,9 @@ public class FlixBusPage extends FlixBusGeneric{
 	
 	@FindBy(xpath="//input[@id='dateInput-from']")
 	private WebElement departureDate;
+	
+	@FindBy(xpath="//input[@id='dateInput-to']")
+	private WebElement returnDate;
 		
 	@FindBy(xpath="//label[@class='hcr-radio__label-4-5-2'  and @for='search-mask-trip-mode-oneway-toggle']")
 	private WebElement oneWay;
@@ -50,7 +54,9 @@ public class FlixBusPage extends FlixBusGeneric{
 		return departureDate;
 	}
 
-
+	public WebElement getreturnDate() {
+		return returnDate;
+	}
 
 	public WebElement getOneWay() {
 		return oneWay;
@@ -74,7 +80,7 @@ public class FlixBusPage extends FlixBusGeneric{
 		return search;
 	}
 	
-	public void oneWay(String round, String fromName, String toName, String pickMonth, String pickYear, String pickdate, String adult, String child, String bike, WebDriver driver) throws InterruptedException
+	public void oneWay(String round, String fromName, String toName, String pickMonth, String pickYear, String pickdate, String pickReturnMonth, String pickReturnYear, String pickReturndate, String adult, String child, String bike, WebDriver driver) throws InterruptedException
 	
 	{
 		String selector="oneway";
@@ -95,8 +101,12 @@ public class FlixBusPage extends FlixBusGeneric{
 		Thread.sleep(2000);
 		fromplace(driver, toName);
 		departureDate.click();
-		
 		calender(driver, pickMonth, pickYear, pickdate);
+		boolean checkbox = driver.findElement(By.xpath("//label[text()='Round Trip']/parent::div/input[@id='search-mask-trip-mode-roundtrip-toggle']")).isSelected();
+		if(checkbox==true) {
+		returnDate.click();
+		calender(driver, pickReturnMonth, pickReturnYear, pickReturndate);
+		}
 		passanger.click();
 		
 		selectPassanger(driver, adult, child, bike);
